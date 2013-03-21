@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="app.Entry.AbstractEntry" table="ENTRY">
+        <id name="title" column="TITLE" type="string"/>
+        
+        <discriminator column="discriminator" type="java.lang.String"/>
+        
+        <property name="id" column="ID" type="long" index="id_idx"/>
+        <property name="url" column="URL" type="java.lang.String" index="url_idx"/>
+        <property name="domain" column="DOMAIN" type="java.lang.String"/>
+        <property name="author" column="AUTHOR" type="java.lang.String"/>
+        <property name="authorId" column="AUTHOR_ID" type="long"/>
+        <property name="createdDate" column="CREATED_DATE" type="java.util.Date" index="date_idx" />
+        <property name="language" column="LANGUAGE" type="java.lang.String"/>
+        <property name="summary" column="SUMMARY" type="text" />
+        <property name="points" column="POINTS" type="int"/>
+        <property name="internalBoost" column="BOOST" type="double"/>
+        <list name="comments" cascade="all" lazy="false">
+        	<key column="entry_title"/>
+            <index column="comment_entry_id_idx"/>
+            <one-to-many class="app.Entry.EntryComment"/>
+        </list>
+        <list name="tags" cascade="all" lazy="false">
+        	<key column="entry_title"/>
+            <index column="entry_tags_idx"/>
+            <many-to-many column="keyword_id" class="app.API.Search.Keyword.Phrase"/>
+        </list>
+        <property name="showOnFrontPage" column="SHOW_FRONT_PAGE" type="boolean"/>
+	    <property name="showOnSearchPage" column="SHOW_SEARCH_PAGE" type="boolean"/>
+        
+        <subclass name="app.Entry.NewsEntry" dynamic-update="false" dynamic-insert="false">
+        </subclass>
+        
+        <subclass name="app.Entry.ShoppingDealsEntry" dynamic-update="false" dynamic-insert="false">
+        	<property name="price" type="double"
+        		update="true" insert="true" column="PRICE"/>
+        	<property name="listedPrice" type="double"
+        		update="true" insert="true" column="LISTED_PRICE"/>
+        	<property name="rebate" type="double"
+        		update="true" insert="true" column="REBATE"/>
+        	<property name="monetaryUnit" type="java.lang.String"
+        		update="true" insert="true" column="MONETARY_UNIT"/>
+        	<property name="imageLink" type="java.lang.String"
+        		update="true" insert="true" column="IMAGE_LINK"/>
+        </subclass>
+        
+        <subclass name="app.Entry.CouponEntry" dynamic-update="false" dynamic-insert="false">
+        	<property name="couponCode" type="java.lang.String"
+        		update="true" insert="true" column="COUPON_CODE"/>
+        	<property name="category" type="java.lang.String"
+        		update="true" insert="true" column="COUPON_CATEGORY"/>
+        	<property name="startDate" type="java.util.Date" 
+        		update="true" insert="true" column="COUPON_START_DATE"/>
+        	<property name="endDate" type="java.util.Date" 
+        		update="true" insert="true" column="COUPON_END_DATE"/>
+        </subclass>
+        
+    </class>
+
+
+</hibernate-mapping>

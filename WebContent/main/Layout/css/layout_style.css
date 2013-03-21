@@ -1,0 +1,52 @@
+/* header */
+.menu_header {color: gray; }
+.menu_header a {color: #336699; text-decoration: none}
+.menu_header a:hover {text-decoration: underline  }
+
+/* ID style */
+/*=========== // tab classes //=============*/
+#main { position:relative; top: -1px;text-align: left; border: 1px solid #2D5B77; background: #FFFFFF; clear: both; width: 100%; }
+#bodyarea { padding: 0px;  }
+#tabs { font-family: tahoma,verdana,sans-serif; font-size: 85%; clear: both; text-align: center; }
+#tabs ul { display: inline; list-style-type: none; margin: 0; padding: 0; }
+#tabs li { float: left; }
+#tabs a,span { width: 90px; } 
+#tabs span {position: relative; top: 0; margin: 0 2px 0 0; float: left; border:1px solid #2D5B77; padding: 6px 4px 6px 10px; text-decoration: none; color: #333; }
+#tabs a       {position: relative; top: 0; margin: 1px 2px 0 0; float: left; border:1px solid #2D5B77; padding: 5px 4px 5px 10px; text-decoration: none; color: #333; }
+#tabs a:hover {position: relative; top: 0; padding: 5px 4px 6px 10px; margin-top: 0px; text-decoration: none;}
+#tabs a.active {position: relative; top: 0; margin: 0 2px 0 0; float: left; border: 1px solid #2D5B77; padding: 6px 4px 6px 10px; text-decoration: none; color: #333; }
+#tabs a.active:hover {position: relative; top: 0; margin: 0 2px 0 0; float: left; border: 1px solid #2D5B77; padding: 6px 4px 6px 10px; text-decoration: underline; color: #333; }
+#subtabs ul { list-style-type: none; margin: 0; padding: 0; }
+#subtabs li { float: left; padding: 0 8px 0 8px; border-left: 1px solid #CCC; white-space: nowrap; }
+#subtabs li:first-child { border-left: none; } 
+#subtabs { font-family: tahoma,verdana,sans-serif; font-size: 85%; background: #2D5B77; color: #FFFFFF; padding: 5px 7px 7px 7px; /* for All other Browsers */ }
+
+/*body*/
+#newsContainer { width:700px}
+#adSpot { width:300px}
+
+/*entry*/
+
+#entry_title {text-decoration: none; font-family: tahoma,verdana,sans-serif; font-size: 14px; color: #007DEA; }
+#entry_title a {text-decoration: none; color: #007DEA; }
+#entry_title a:hover { text-decoration: none; color: #956F00; }
+#entry_source {padding:0px 10px 15px 5px; text-decoration: none; font-family: tahoma,verdana,sans-serif; font-size: 11px; color: #555555; }
+#entry_source a {text-decoration: none; color: #0000FF; }
+#entry_pub_date {padding:0px 10px 15px 5px; text-decoration: none; font-family: tahoma,verdana,sans-serif; font-size: 11px; color: #555555; }
+
+#tag_title {text-decoration: none; font-family: tahoma,verdana,sans-serif; font-size: 10px; color: #fff; }
+#tag_title a {text-decoration: none; color: #fff; }
+#tag_title a:hover { text-decoration: none; color: #fff; }
+
+#ad_header {font:16px; background:#9ACD32}
+
+
+/* footer */
+.menu_footer {color: gray; }
+.menu_footer a {color: #336699;text-decoration: none}
+.menu_footer a:hover {text-decoration: underline  }
+
+/*ad links*/
+.ad_link {color: gray; padding:5px 5px 5px 5px}
+.ad_link a {color: #336699;text-decoration: none}
+.ad_link a:hover {text-decoration: underline  }

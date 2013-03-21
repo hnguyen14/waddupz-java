@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="app.API.Search.Keyword.Phrase" table="KEYWORD">
+        <id name="id" column="ID" type="long">
+            <generator class="native"/>
+        </id>
+        <property name="phrase" column="PHRASE" type="java.lang.String" index="phrase_idx"/>
+        <property name="category" column="CATEGORY" type="java.lang.String"/>
+        <property name="language" column="LANGUAGE" type="java.lang.String"/>
+        <property name="validity" column="VALID" type="yes_no"/>
+    </class>
+
+
+</hibernate-mapping>

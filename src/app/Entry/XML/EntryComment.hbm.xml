@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="app.Entry.EntryComment" table="ENTRY_COMMENTS">
+        <id name="id" column="ID" type="long">
+            <generator class="native"/>
+        </id>
+        <property name="comment" column="COMMENT" type="java.lang.String"/>
+        <property name="author" column="AUTHOR" type="java.lang.String"/>
+        <property name="email" column="EMAIL" type="java.lang.String"/>
+        <property name="commentDate" column="CREATED_DATE" type="java.util.Date" index="date_idx" />
+    </class>
+
+
+</hibernate-mapping>
